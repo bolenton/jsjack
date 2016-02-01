@@ -1,0 +1,183 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>JsJack</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="hero is-info is-large">
+        <!-- This is the header / top nav -->
+        <div class="hero-header">
+            <header class="header">
+                <div class="container">
+                    <div class="header-left">
+                        <a class="header-item" href="#"><img src="assets/img/logo.png" alt="Logo"></a>
+                        <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-github"></i></a>
+                        <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-linkedin"></i></a>
+                        <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-twitter"></i></a>
+                    </div>
+
+                    <div class="header-center">
+                        <h1 class="title">JsJack</h1>
+                    </div>
+
+                    <span class="header-toggle">
+                        <span></span><span></span><span></span>
+                    </span>
+
+                    <div class="header-right header-menu">
+                        <span class="header-item"><a class="is-active" href="#">Blog</a></span>
+                        <span class="header-item"><a href="#">Portfolio</a></span>
+                        <span class="header-item"><a href="#">Contact</a></span>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- Main content - Remove some elements via JavaScript to start game -->
+
+        <!-- Game Message -->
+        <section>
+            <div class="columns game-message">
+                <div class="column"></div>
+                <div class="message is-warning column is-third">
+                    <div class="message-header"></div>
+                    <div class="message-body">
+                        Welcome to JsJack. Your best BlackJack experience Yet!
+                    </div>
+                </div>
+                <div class="column"></div>
+            </div>
+
+            <!-- Player Name -->
+            <div class="mid content is-centered columns">
+                <div class="column"></div>
+                <p class="control column is-third">
+                    <input class="input" type="text" placeholder="Enter Your Name">
+                </p>
+                <div class="column"></div>
+            </div>
+
+            <!-- Choose Your Avatar -->
+            <div class="columns game-message">
+                <div class="column"></div>
+                <div class="message is-success column is-third">
+                    <div class="message-header"></div>
+                    <div class="message-body">
+                        Choose Your Avatar!
+                    </div>
+                </div>
+                <div class="column"></div>
+            </div>
+            
+            <div class="content columns">
+                <div class="column is-2"></div>
+                <div class="column"></div>
+                <div class="card-content column">
+                    <div class="media">
+                        <figure class="media-image is-40">
+                            <img src="assets/img/png/O05.png" alt="Image">
+                        </figure>
+                    </div>
+                    <label class="radio">
+                        <input type="radio" name="person">
+                    </label>
+                </div>
+                <div class="column"></div>
+                <div class="card-content column">
+                    <div class="media">
+                        <figure class="media-image is-40">
+                            <img src="assets/img/png/FE03.png" alt="Image">
+                        </figure>
+                    </div>
+                    <label class="radio">
+                        <input type="radio" name="person">
+                    </label>
+                </div>
+                <div class="card-content column">
+                    <div class="media">
+                        <figure class="media-image is-40">
+                            <img src="assets/img/png/M04.png" alt="Image">
+                        </figure>
+                    </div>
+                    <label class="radio">
+                        <input type="radio" name="person">
+                    </label>
+                </div>
+                <div class="card-content column">
+                    <div class="media">
+                        <figure class="media-image is-40">
+                            <img src="assets/img/png/FC04.png" alt="Image">
+                        </figure>
+                    </div>
+                    <label class="radio">
+                        <input type="radio" name="person">
+                    </label>
+                </div>
+                <div class="card-content column">
+                    <div class="media">
+                        <figure class="media-image is-40">
+                            <img src="assets/img/png/L05.png" alt="Image">
+                        </figure>
+                    </div>
+                    <label class="radio">
+                        <input type="radio" name="person">
+                    </label>
+                </div>
+                <div class="column"></div>
+                <div class="card-content column">
+                    <div class="media">
+                        <figure class="media-image is-40">
+                            <img src="assets/img/png/FI02.png" alt="Image">
+                        </figure>
+                    </div>
+                    <label class="radio">
+                        <input type="radio" name="person">
+                    </label>
+                </div>
+                <div class="column"></div>
+                <div class="card-content column">
+                    <div class="media">
+                        <figure class="media-image is-40">
+                            <img src="assets/img/png/A03.png" alt="Image">
+                        </figure>
+                    </div>
+                    <label class="radio">
+                        <input type="radio" name="person">
+                    </label>
+                </div>
+                <div class="column is-2"></div>
+            </div>
+
+
+            <!-- Enter Your Bets -->
+            <div>Cash: $2000</div>
+            <div class="content is-centered columns">
+                <div class="column"></div>
+                <p class="control is-grouped column">
+                    <span class="select"><select><option>$</option></select></span>
+                    <input class="input" type="text" placeholder="How much you betting?">
+                    <a class="button is-success"><span class="bet-btn-text"><i class="fa fa-play-circle"></i></span></a>
+                </p>
+                <div class="column"></div>
+            </div>
+
+        </section>
+
+        <!-- This is my footer. -->
+        <div class="hero-footer">
+            <nav class="tabs is-boxed is-fullwidth">
+                <p><strong>JsJack</strong> by Taurus Omejia.</p>
+            </nav>
+        </div>
+    </section>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>
