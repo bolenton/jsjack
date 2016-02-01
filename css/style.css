@@ -1,14 +1,17 @@
 
-.hero-footer{
-    margin-top: 200px;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
+.header-center{
+    margin-left: 0;
+}
+
+.game-message{
+    margin-top: 150px;
 }
 
 .mid{
     margin-top: 1px;
 }
 
-.game-message{
-    margin-top: 70px;
+.hero-footer{
+    margin-top: 200px;
+    padding-bottom: 28px;
 }
