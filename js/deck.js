@@ -67,16 +67,16 @@ function dealCards() {
 
     }
 }
-function createHand() {
-    var hand = ""
+// function createHand() {
+//     var hand = ""
 
-    for (var i = 0; i < handSize; i++) {
-        var card = "<div class=' playerCard" + i + " column'></div>"
-        hand += card;
+//     for (var i = 0; i < handSize; i++) {
+//         var card = "<div class=' playerCard" + i + " column'></div>"
+//         hand += card;
 
-    }
-    for (var i = 0; i < playerCount; i++) {
-        var target = $('.player' + i.toString() + '-hand')
-        target.html(hand)
-    }
-}
+//     }
+//     for (var i = 0; i < playerCount; i++) {
+//         var target = $('.player' + i.toString() + '-hand')
+//         target.html(hand)
+//     }
+// }

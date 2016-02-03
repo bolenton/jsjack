@@ -30,7 +30,7 @@ console.log(myDeck);
         if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet)) {
             $('.setUpUi').hide();
             $('.game').show();
-            createHand();
+            // createHand();
             dealCards()
         }
         else {
