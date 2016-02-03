@@ -7,6 +7,10 @@ document.head.appendChild(imported);
 var Dealer = {};
 var Player = {};
 var myDeck = new Deck();
+myDeck = shuffle(myDeck);
+console.log(myDeck);
+
+
 
 // Ui Setup Controls and Game initializer
 (function () {
@@ -14,32 +18,45 @@ var myDeck = new Deck();
         $('.game').hide();
     })
 
+    //Start Game
     $('.startGame').click(function () {
-        $('.setUpUi').hide();
-        $('.game').show();
-        startGame();
+        var playerName = $(".playerName").val();
+        var bet = $(".playerBet").val();
+        var playerBet = parseInt(bet);
+
+
+        loadPlayerUi(playerName, playerBet, "ava/M04.png");
+
+        if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet)) {
+            $('.setUpUi').hide();
+            $('.game').show();
+            createHand();
+            dealCards()
+        }
+        else {
+            alert("Please enter your name amount to bet.")
+        }
     });
 })();
 
 // Game play Logic
-myDeck = shuffle(myDeck);
 
-$('playerHit').click(function () {
-    alert(myDeck[0].name + " of " + myDeck[0].suit);
-    var card0 = (loadCardUi(myDeck[0].suit, myDeck[0].name));
-    var c0 = card0.toLowerCase();
- 
+$('.playerHit').click(function () {
+    for (i = 4; i <= 51; i++)
+        alert("Dealer drew card " + myDeck[i].name + " of " + myDeck[i].suit + " " + i);
+
+
 })
 
-var playerCard1 = $('<img />', { id: 'ok', src: 'assets/cards/' + c0 + '.png', alt: 'MyAlt' });
-playerCard1.appendTo($('#playerCard1'));
-var playerCard2 = $('<img />', { id: 'ok', src: 'assets/cards/' + c1 + '.png' });
-playerCard2.appendTo($('#playerCard2'));
-var playerCard3 = $('<img />', { id: 'ok', src: 'assets/cards/' + c2 + '.png' });
-playerCard3.appendTo($('#playerCard3'));
-var playerCard4 = $('<img />', { id: 'ok', src: 'assets/cards/' + c3 + '.png' });
-playerCard4.appendTo($('#playerCard4'));
-var playerCard5 = $('<img />', { id: 'ok', src: 'assets/cards/' + c4 + '.png' });
-playerCard5.appendTo($('#playerCard5'));
-var playerCard6 = $('<img />', { id: 'ok', src: 'assets/cards/' + c5 + '.png' });
-playerCard6.appendTo($('#playerCard6'));
+function loadPlayerUi(name, bet, avatar) {
+    $(".name").append(name);
+    $(".bet").append(bet);
+    $(".avatar").append(avatar);
+}
+
+function calculateHand() {
+    var handTotal = [];
+    var total = 0;
+    for (var i in handTotal) { total += handTotal[i]; }
+}
+calculateHand();

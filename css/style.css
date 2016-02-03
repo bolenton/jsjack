@@ -12,6 +12,48 @@
 }
 
 .hero-footer{
-    margin-top: 200px;
+    margin-top: 201px;
     padding-bottom: 28px;
 }
+
+.game{
+    margin-top: 70px;
+}
+
+.faceDown{
+    margin-left: 0;
+    padding-left: 0 ;
+}
+
+.alignMedia{
+    margin-right: 60px;
+}
+
+.alignPic{
+    margin-left: 30px;
+}
+
+.playerHand{
+    margin-top: 50px;
+    border-bottom-left-radius: 350px;
+    border-bottom-right-radius: 350px;
+    border-bottom: 15px solid saddlebrown;
+}
+
+.dealerHand{
+    margin-top: 50px;
+    border-top-left-radius: 350px;
+    border-top-right-radius: 350px;
+    border-top: 15px solid saddlebrown;
+}
+
+.message-body{
+    font-size: 20px;
+}
+
+.userBet a{
+    font-weight: 900;
+    font-size: 21px;
+    margin-bottom: 15px
+}
+
