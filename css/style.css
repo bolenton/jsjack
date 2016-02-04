@@ -1,59 +1,58 @@
 
-.header-center{
+.header-center {
     margin-left: 0;
 }
 
-.game-message{
+.game-message {
     margin-top: 150px;
 }
 
-.mid{
+.mid {
     margin-top: 1px;
 }
 
-.hero-footer{
+.hero-footer {
     margin-top: 201px;
     padding-bottom: 28px;
 }
 
-.game{
+.game {
     margin-top: 70px;
 }
 
-.faceDown{
+.faceDown {
     margin-left: 0;
-    padding-left: 0 ;
+    padding-left: 0;
 }
 
-.alignMedia{
+.alignMedia {
     margin-right: 60px;
 }
 
-.alignPic{
+.alignPic {
     margin-left: 30px;
 }
 
-.playerHand{
+.playerHand {
     margin-top: 50px;
     border-bottom-left-radius: 350px;
     border-bottom-right-radius: 350px;
     border-bottom: 15px solid saddlebrown;
 }
 
-.dealerHand{
+.dealerHand {
     margin-top: 50px;
     border-top-left-radius: 350px;
     border-top-right-radius: 350px;
     border-top: 15px solid saddlebrown;
 }
 
-.message-body{
+.message-body {
     font-size: 20px;
 }
 
-.userBet a{
+.userBet a {
     font-weight: 900;
     font-size: 21px;
-    margin-bottom: 15px
+    margin-bottom: 15px;
 }
-

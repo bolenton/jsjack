@@ -15,8 +15,6 @@
             <header class="header">
                 <div class="container">
                     <div class="header-left">
-                        <a class="header-item" href="#"><img src="assets/img/logo.png" alt="Logo"></a>
-                        <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-github"></i></a>
                         <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-linkedin"></i></a>
                         <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-twitter"></i></a>
                     </div>
@@ -41,7 +39,7 @@
 
         <section>
             <!-- Main Setup UI content - this will be removed via JavaScript at start of game -->
-            <div class="setUpUi">
+            <div class="welcomePlayer">
                 <div class="columns game-message">
                     <div class="column"></div>
                     <div class="message is-danger column is-third">
@@ -145,14 +143,9 @@
             </div>
 
             <!-- Main Setup UI content - this will be removed via JavaScript at start of game -->
-            <div class="game ">
-                <!--Game Info!-->
-
-                <!--Dealer Hand-->
-                <p class="title">Dealer Hand</p>
+            <div class="gameBoard">
+                <!-- Dealer Hand -->
                 <div class="columns dealerHand player0">
-                
-                    
                     <div class="column is-3"></div>
                     <div class="playerCard4 column"></div>
                     <div class="playerCard2 column"></div>
@@ -163,7 +156,8 @@
                     <div class="column">
                         <!--Player Status -->
                         <div class="media">
-                            <figure class="media-image alignMedia"><img class="alignPic" src="ava/L05.png" alt="Image">
+                            <figure class="media-image alignMedia">
+                                <img class="alignPic" src="ava/L05.png" alt="Image">
                                 <span class="tag is-dark is-medium">Dealer Don Jon!</span>
                             </figure>
                         </div>
@@ -178,13 +172,15 @@
                             JsJack Says:
                         </div>
                         <div class="message-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla.
-                            Vestibulum rhoncus ac ex sit amet fringilla. 
+                            <span class="name"></span>! <span class="inGameMsg">
+                                Heres a tip for you: Our Dealer has a strange habit of always standing
+                                after 17, but will always hit before that. Strange right?
+                            </span>
                         </div>
                     </div>
                     <div class="column"></div>
                 </div>
-                
+
                 <a class="button is-warning handTotal">Total: </a>
                 <!--Player Hand -->
                 <div class="columns playerHand player1">
@@ -192,7 +188,8 @@
                     <div class="column">
                         <!--Player Status -->
                         <div class="media">
-                            <figure class="media-image alignMedia"><img class="alignPic avatar" src="ava/O05.png" alt="Image">
+                            <figure class="media-image alignMedia">
+                                <img class="alignPic avatar" src="ava/O05.png" alt="Image">
                                 <span class="tag is-dark is-medium name"></span>
                             </figure>
                         </div>
@@ -205,7 +202,7 @@
                     <div class="playerCard5 column"></div>
                     <div class="column is-3"></div>
                 </div>
-                
+
                 <div class="userBet"><a class="button is-warning  "><i class="fa fa-money"></i><span class="bet"> $</span> is on the line</a></div>
                 <a class="button is-success playerHit">Hit Me</a>
                 <a class="button is-danger playerStand">Stand</a>
@@ -224,5 +221,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="js/deck.js"></script>
+<script src="js/ui-healper.js"></script>
 <script src="js/script.js"></script>
 </html>
