@@ -13,7 +13,7 @@ function Deck() {
 
     for (var s = 0; s < this.suits.length; s++) {
         for (var n = 0; n < this.names.length; n++) {
-            cards.push(new card(n + 1, this.names[n], this.suits[s]));
+            cards.push(new card((n > 10) ? 10 : n + 1, this.names[n], this.suits[s]));
         }
     }
     return cards;

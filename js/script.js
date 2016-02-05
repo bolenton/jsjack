@@ -16,33 +16,26 @@ console.log(myDeck);
 $('.playerHit').click(function () {
 
     var cardIndex = playerHand.push(myDeck[nextCard()].value);
-    calculatePlayerHand()
     placeNextPlayerCard(cardIndex)
-    checkWinningConditions()
+    calculatePlayerHand()
+    
+    window.setTimeout(checkWinningConditions(),3000);
+   
+    
+    alert("Player Drew " + playerHand[playerHand.length - 1])
 });
 
 $('.playerStand').click(function () {
     flipDealerCards()
-    
-    if (dealerHandTotal < 17){
-        alert("dealer has" + dealerHandTotal)
-        var cardIndex = dealerHand.push(myDeck[nextCard()].value);
-        calculateDealerHand()
-        placeNextDealerCard(cardIndex)
-        checkWinningConditions()
-        alert(dealerHandTotal)
-    }
-    else if (dealerHandTotal >= 17 && dealerHandTotal <  21){
-        alert("Dealer stands at " + dealerHandTotal.toString())
-    }
-    
+    $(".playerHit").addClass( "is-disabled" );
+    alert("Dealer reviews his had: " + dealerHandTotal.toString())
 });
 
 //Set starting hand total
 var playerHand = [myDeck[1].value, myDeck[3].value];
 var dealerHand = [myDeck[0].value, myDeck[2].value];
-var playerHandTotal = 0;
-var dealerHandTotal = 0;
+var playerHandTotal = calculatePlayerHand();
+var dealerHandTotal = calculateDealerHand();
 
 //Caulate the player hand total
 function calculatePlayerHand() {
@@ -51,6 +44,7 @@ function calculatePlayerHand() {
         playerHandTotal += playerHand[i];
     }
     $(".handTotal").html(playerHandTotal);
+    return playerHandTotal;
 };
 
 //Caulate the dealer hand total
@@ -59,12 +53,17 @@ function calculateDealerHand() {
     for (var i in dealerHand) {
         dealerHandTotal += dealerHand[i];
     }
+    return dealerHandTotal
 };
 
 //check winning conditions
 function checkWinningConditions() {
-    if (playerHandTotal == 21) {
+    if (playerHandTotal == 21 && dealerHandTotal != 21) {
         alert("GameOver You WIN!!!!!!!!!!!!")
+        location.reload();
+    }
+    if (playerHandTotal == 21 && dealerHandTotal == 21) {
+        alert("Its a draw")
         location.reload();
     }
     if (playerHandTotal > 21) {
