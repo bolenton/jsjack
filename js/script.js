@@ -17,7 +17,7 @@ $('.playerHit').click(function () {
     var cardIndex = playerHand.push(myDeck[nextCard()].value);
     placeNextPlayerCard(cardIndex);
     calculatePlayerHand();
-    $('.inGameMsg').text("Player drew " + playerHand[playerHand.length - 1])
+    $('.inGameMsg').text("Player drew " + playerHand[playerHand.length - 1]);
     checkWinningConditions();
 });
 
@@ -41,22 +41,22 @@ function DealerHit() {
 
 // Dealer Stand
 function dealerStand() {
-    if (dealerHandTotal > 21) {
-        $('.inGameMsg').text(playerName + " won, because busted!");
-        gameOver();
+    checkWinningConditions();
+    
+    
+    if(playerHandTotal > dealerHandTotal && playerHandTotal < 21)
+    {
+        $('.inGameMsg').text(playerName +" had a better hand. " + playerName +  " won!");
     }
-    if (dealerHandTotal > playerHandTotal) {
-        $('.inGameMsg').text(playerName + " lost to Dealer Don JON!");
-        gameOver();
+    else if (dealerHandTotal > playerHandTotal && dealerHandTotal < 21)
+    {
+        $('.inGameMsg').text("Dealer Don had more, " + playerName + "lost.");
     }
-    else if (dealerHandTotal < playerHandTotal) {
-        $('.inGameMsg').text(playerName + " beat Dealer Don Jon!");
-        gameOver();
+    else if (dealerHandTotal > 21)
+    {
+        $('.inGameMsg').text("Dealer Don BUST! " + playerName + " won.");
     }
-    else {
-        $('.inGameMsg').text(playerName + " beat Dealer Don Jon!");
-        gameOver();
-    }
+     
 }
 
 //Dealer DEcides to hit or stand
@@ -68,6 +68,10 @@ function dealerHitorStand() {
     if (dealerHandTotal > 16) {
         alert("Dealer Jon had to stand!");
         dealerStand();
+    }
+    if (dealerHandTotal == 21 && playerHandTotal != 21) {
+        $('.inGameMsg').text("Gameover " + playerName + ": got a BlackJack")
+        gameOver();
     }
 };
 
@@ -107,8 +111,8 @@ function checkWinningConditions() {
         $('.inGameMsg').text("Its a draw")
         gameOver();
     }
-    if (playerHandTotal > 21) {
-        $('.inGameMsg').text("GameOver " + playerName + " BUST!")
+    if (playerHandTotal > 21 && dealerHandTotal < 21) {
+        $('.inGameMsg').text("Gameover " + playerName + " BUST!")
         gameOver();
     }
 }

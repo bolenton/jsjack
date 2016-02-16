@@ -25,14 +25,14 @@ $("input:radio[name=person]").click(function () {
 });
 
 $('.startGame').click(function () {
-    console.log(avatarName)
+    console.log(avatarName);
     // Sets player stats and avatar on board
     playerName = $(".playerName").val();
     bet = $(".playerBet").val();
     playerBet = parseInt(bet);
     loadPlayerUi(playerName, playerBet, avatarName);
 
-    calculatePlayerHand()
+    calculatePlayerHand();
     
     // Valadates that player entered name and bet, before launching board.
     if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet)) {
@@ -40,32 +40,32 @@ $('.startGame').click(function () {
         $('.welcomePlayer').hide();
         $('.playAgain').hide();
         $('.gameBoard').show();
-        alert("Game have begun")
-        checkWinningConditions()
+        alert("Game have begun");
+        checkWinningConditions();
     }
     else {
-        alert("Please enter your name amount to bet.")
+        alert("Please enter your name amount to bet.");
     }
 });
 
 function placeNextPlayerCard(cardIndex) {
     var nextCardIndex = cardIndex + 1;
     var myCard = (loadCardUi(myDeck[nextCardIndex].suit, myDeck[nextCardIndex].name));
-    var target = $('.player' + 1 + ' ' + '.playerCardSpot' + cardLocationID.toString())
+    var target = $('.player' + 1 + ' ' + '.playerCardSpot' + cardLocationID.toString());
     var playerCardImg = $('<img />', { id: 'ok', src: 'assets/cards/' + myCard + '.png', alt: 'MyAlt' });
     target.html(playerCardImg);
 
-    cardLocationID += 1
+    cardLocationID += 1;
 };
 
 function placeNextDealerCard(cardIndex) {
     var nextCardIndex = cardIndex + 1;
     var myCard = (loadCardUi(myDeck[nextCardIndex].suit, myDeck[nextCardIndex].name));
-    var target = $('.player' + 0 + ' ' + '.playerCardSpot' + dealerCardLocationID.toString())
+    var target = $('.player' + 0 + ' ' + '.playerCardSpot' + dealerCardLocationID.toString());
     var playerCardImg = $('<img />', { id: 'ok', src: 'assets/cards/' + myCard + '.png', alt: 'MyAlt' });
     target.html(playerCardImg);
 
-    dealerCardLocationID += 1
+    dealerCardLocationID += 1;
 };
 
 function flipDealerCards() {
