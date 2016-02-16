@@ -35,7 +35,7 @@ $('.startGame').click(function () {
     calculatePlayerHand();
     
     // Valadates that player entered name and bet, before launching board.
-    if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet) && bet <= 2000) {
+    if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet) && bet <= 2000 && bet > 0) {
         $('.dealerHandTotal').hide();
         $('.welcomePlayer').hide();
         $('.playAgain').hide();
@@ -103,3 +103,4 @@ for (var i = 0; i < (playerCount * handSize) && i < myDeck.length; i++) { //Loop
         playerID++
     }
 }
+
