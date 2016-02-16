@@ -35,7 +35,7 @@ $('.startGame').click(function () {
     calculatePlayerHand();
     
     // Valadates that player entered name and bet, before launching board.
-    if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet)) {
+    if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet) && bet <= 2000) {
         $('.dealerHandTotal').hide();
         $('.welcomePlayer').hide();
         $('.playAgain').hide();
@@ -44,7 +44,7 @@ $('.startGame').click(function () {
         checkWinningConditions();
     }
     else {
-        alert("Please enter your name amount to bet.");
+        alert("Please enter your name, and $2000 or less to bet.");
     }
 });
 
