@@ -47,18 +47,22 @@ function dealerStand() {
     if(playerHandTotal > dealerHandTotal && playerHandTotal < 21)
     {
         $('.inGameMsg').text(playerName +" had a better hand. " + playerName +  " won!");
+        gameOver();
     }
     else if (dealerHandTotal > playerHandTotal && dealerHandTotal < 21)
     {
         $('.inGameMsg').text("Dealer Don had more, " + playerName + "lost.");
+        gameOver();
     }
     else if (dealerHandTotal > 21)
     {
         $('.inGameMsg').text("Dealer Don BUST! " + playerName + " won.");
+        gameOver();
     }
     else if (dealerHandTotal == playerHandTotal)
     {
         $('.inGameMsg').text("Its a tie");
+        gameOver();
     }
      
 }
