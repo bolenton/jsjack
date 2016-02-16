@@ -56,21 +56,25 @@ function dealerStand() {
     {
         $('.inGameMsg').text("Dealer Don BUST! " + playerName + " won.");
     }
+    else if (dealerHandTotal == playerHandTotal)
+    {
+        $('.inGameMsg').text("Its a tie");
+    }
      
 }
 
 //Dealer DEcides to hit or stand
 function dealerHitorStand() {
     while (dealerHandTotal <= 16) {
-        alert("Dealer Jon decided to HIT!");
+        $('.inGameMsg').text("Dealer Jon decided to HIT!");
         DealerHit();
     }
     if (dealerHandTotal > 16) {
-        alert("Dealer Jon had to stand!");
+        $('.inGameMsg').text("Dealer Jon had to stand!");
         dealerStand();
     }
     if (dealerHandTotal == 21 && playerHandTotal != 21) {
-        $('.inGameMsg').text("Gameover " + playerName + ": got a BlackJack")
+        $('.inGameMsg').text("Gameover dealer Jon got a BlackJack")
         gameOver();
     }
 };
