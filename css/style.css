@@ -16,8 +16,8 @@
     padding-bottom: 28px;
 }
 
-.game {
-    margin-top: 70px;
+.gameBoard {
+    margin-top: 106px;
 }
 
 .faceDown {
@@ -45,6 +45,10 @@
     border-top-left-radius: 350px;
     border-top-right-radius: 350px;
     border-top: 15px solid saddlebrown;
+}
+
+.dealerHandTotal {
+    margin-bottom: 10px;
 }
 
 .message-body {

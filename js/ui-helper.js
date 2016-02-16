@@ -11,25 +11,34 @@ function loadCardUi(name, suit) {
 function loadPlayerUi(name, bet, avatar) {
     $(".name").append(name);
     $(".bet").append(bet);
-    $(".avatar").append(avatar);
+    $(".avatar").attr("src", avatar);
 }
 
 // Ui Controler to setup board
-var playerNamee;
+var playerName;
 var bet;
 var playerBet;
-$('.startGame').click(function () {   
+var avatarName;
+
+$("input:radio[name=person]").click(function () {
+    avatarName = $(this).val();
+});
+
+$('.startGame').click(function () {
+    console.log(avatarName)
     // Sets player stats and avatar on board
     playerName = $(".playerName").val();
     bet = $(".playerBet").val();
     playerBet = parseInt(bet);
-    loadPlayerUi(playerName, playerBet, "ava/M04.png");
-    
+    loadPlayerUi(playerName, playerBet, avatarName);
+
     calculatePlayerHand()
     
     // Valadates that player entered name and bet, before launching board.
     if (playerName.length > 0 && bet.length > 0 && !isNaN(playerBet)) {
+        $('.dealerHandTotal').hide();
         $('.welcomePlayer').hide();
+        $('.playAgain').hide();
         $('.gameBoard').show();
         alert("Game have begun")
         checkWinningConditions()
@@ -59,7 +68,7 @@ function placeNextDealerCard(cardIndex) {
     dealerCardLocationID += 1
 };
 
-function flipDealerCards(){
+function flipDealerCards() {
     var myCard = (loadCardUi(myDeck[2].suit, myDeck[2].name));
     var target = $('.player' + "0" + ' ' + '.playerCardSpot1')
     var playerCardImg = $('<img />', { id: 'ok', src: 'assets/cards/' + myCard + '.png', alt: 'MyAlt' });
