@@ -10,13 +10,21 @@ function Deck() {
     this.names = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
     this.suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
     var cards = [];
-
+    
+    // assign value numeric value of 10 to the facecards
     for (var s = 0; s < this.suits.length; s++) {
         for (var n = 0; n < this.names.length; n++) {
-            cards.push(new card((n > 10) ? 10 : n + 1, this.names[n], this.suits[s]));
+            cards.push(new card((n > 9) ? 10 : n + 1, this.names[n], this.suits[s]));
         }
     }
     return cards;
+}
+
+function checkAce(ace, playerHandTotal) {
+    if (playerHandTotal - 1 <= 10) {
+        ace = 11;
+        return ace;
+    }
 }
 
 // old shuffle deck CUZ YOLO!!!!!
@@ -28,7 +36,7 @@ function Deck() {
 function shuffleMy(deck) {
     var tempCard; // x
     var tempCardIndex; // j
-    for (var i = deck.length - 1; i >= 0 ; i--) {
+    for (var i = deck.length - 1; i >= 0; i--) {
         tempCardIndex = parseInt(Math.random() * i);
         tempCard = deck[i];
         deck[i] = deck[tempCardIndex];
@@ -43,5 +51,5 @@ function nextCard() {
     var cardIndex = currentCard;
     currentCard++;
 
-    return cardIndex;    
+    return cardIndex;
 }

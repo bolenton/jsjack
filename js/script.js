@@ -15,16 +15,10 @@ console.log(myDeck);
 //Player Hit 
 $('.playerHit').click(function () {
     var cardIndex = playerHand.push(myDeck[nextCard()].value);
-<<<<<<< HEAD
-    placeNextPlayerCard(cardIndex)
-    calculatePlayerHand()
-    alert("Player Drew " + playerHand[playerHand.length - 1])
-=======
     placeNextPlayerCard(cardIndex);
     calculatePlayerHand();
     $('.inGameMsg').text("Player drew " + playerHand[playerHand.length - 1]);
     checkWinningConditions();
->>>>>>> 3be53dc982e061a18d4327f6dd4afa559f61825f
 });
 
 //Player Stand 
@@ -48,29 +42,25 @@ function DealerHit() {
 // Dealer Stand
 function dealerStand() {
     checkWinningConditions();
-    
-    
-    if(playerHandTotal > dealerHandTotal && playerHandTotal < 21)
-    {
-        $('.inGameMsg').text(playerName +" had a better hand. " + playerName +  " won!");
+
+
+    if (playerHandTotal > dealerHandTotal && playerHandTotal < 21) {
+        $('.inGameMsg').text(playerName + " had a better hand. " + playerName + " won!");
         gameOver();
     }
-    else if (dealerHandTotal > playerHandTotal && dealerHandTotal < 21)
-    {
+    else if (dealerHandTotal > playerHandTotal && dealerHandTotal < 21) {
         $('.inGameMsg').text("Dealer Don had more, " + playerName + "lost.");
         gameOver();
     }
-    else if (dealerHandTotal > 21)
-    {
+    else if (dealerHandTotal > 21) {
         $('.inGameMsg').text("Dealer Don BUST! " + playerName + " won.");
         gameOver();
     }
-    else if (dealerHandTotal == playerHandTotal)
-    {
+    else if (dealerHandTotal == playerHandTotal) {
         $('.inGameMsg').text("Its a tie");
         gameOver();
     }
-     
+
 }
 
 //Dealer DEcides to hit or stand
@@ -97,13 +87,15 @@ var dealerHandTotal = calculateDealerHand();
 
 //Caulate the player hand total
 function calculatePlayerHand() {
-    
     playerHandTotal = 0;
     for (var i in playerHand) {
         playerHandTotal += playerHand[i];
+
+        if (playerHand[i] == 1) {
+            playerHand[i] = checkAce(playerHand[i], playerHandTotal)
+        }
     }
     $(".handTotal").html(playerHandTotal);
-    checkWinningConditions()
     return playerHandTotal;
 };
 
