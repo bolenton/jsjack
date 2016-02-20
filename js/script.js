@@ -14,14 +14,9 @@ myDeck = shuffleMy(myDeck);
 console.log(myDeck);
 
 $('.playerHit').click(function () {
-
     var cardIndex = playerHand.push(myDeck[nextCard()].value);
     placeNextPlayerCard(cardIndex)
     calculatePlayerHand()
-    
-    window.setTimeout(checkWinningConditions(),3000);
-   
-    
     alert("Player Drew " + playerHand[playerHand.length - 1])
 });
 
@@ -39,11 +34,13 @@ var dealerHandTotal = calculateDealerHand();
 
 //Caulate the player hand total
 function calculatePlayerHand() {
+    
     playerHandTotal = 0;
     for (var i in playerHand) {
         playerHandTotal += playerHand[i];
     }
     $(".handTotal").html(playerHandTotal);
+    checkWinningConditions()
     return playerHandTotal;
 };
 
