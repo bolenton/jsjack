@@ -26,22 +26,22 @@ function Deck() {
 
 // new shuffle deck
 function shuffleMy(deck) {
-    var tempCard // x
-    var tempCardIndex // j
+    var tempCard; // x
+    var tempCardIndex; // j
     for (var i = deck.length - 1; i >= 0 ; i--) {
-        tempCardIndex = parseInt(Math.random() * i)
+        tempCardIndex = parseInt(Math.random() * i);
         tempCard = deck[i];
         deck[i] = deck[tempCardIndex];
         deck[tempCardIndex] = tempCard;
     }
-    return deck
+    return deck;
 }
 
 var currentCard = 0;
 
 function nextCard() {
     var cardIndex = currentCard;
-    currentCard++
+    currentCard++;
 
-    return cardIndex    
+    return cardIndex;    
 }

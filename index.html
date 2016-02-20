@@ -15,14 +15,16 @@
             <header class="header">
                 <div class="container">
                     <div class="header-left">
-                        <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-linkedin"></i></a>
-                        <a class="icon" href="https://github.com/jgthms/bulma"><i class="fa fa-twitter"></i></a>
+                        <a href="https://github.com/bolenton/imagine" target="blank" class="space header-icon"><i class="fa fa-github fa-3x"></i></a>
+                        <a href="https://twitter.com/tauruso" target="blank" class="space header-icon"><i class="fa fa-twitter fa-3x"></i></a>
+                        <a href="https://www.linkedin.com/in/taurus-omejia-775a121b" target="blank" class="space header-icon"><i class="fa fa-linkedin-square fa-3x"></i></a>
+                        <a href="https://medium.com/@taurusomejia" target="blank" class="space header-icon"><i class="fa fa-medium fa-3x"></i></a>
                     </div>
 
                     <div class="header-center">
                         <h1 class="title">JsJack</h1>
                     </div>
-
+                    
                     <span class="header-toggle">
                         <span></span><span></span><span></span>
                     </span>
@@ -38,7 +40,7 @@
 
 
         <section>
-            <!-- Main Setup UI content - this will be removed via JavaScript at start of game -->
+            <!-- Main Setup UI content - This is removed via JavaScript at start of game -->
             <div class="welcomePlayer">
                 <div class="columns game-message">
                     <div class="column"></div>
@@ -76,7 +78,7 @@
                             <figure class="media-image is-40"><img src="ava/O05.png" alt="Image"></figure>
                         </div>
                         <label class="radio">
-                            <input type="radio" name="person">
+                            <input type="radio" name="person" value="ava/O05.png">
                         </label>
                     </div>
                     <div class="card-content column">
@@ -84,7 +86,7 @@
                             <figure class="media-image is-40"><img src="ava/FE03.png" alt="Image"></figure>
                         </div>
                         <label class="radio">
-                            <input type="radio" name="person">
+                            <input type="radio" name="person" value="ava/FE03.png">
                         </label>
                     </div>
                     <div class="card-content column">
@@ -92,7 +94,7 @@
                             <figure class="media-image is-40"><img src="ava/M04.png" alt="Image"></figure>
                         </div>
                         <label class="radio">
-                            <input type="radio" name="person">
+                            <input type="radio" name="person" value="ava/M04.png">
                         </label>
                     </div>
                     <div class="card-content column">
@@ -100,7 +102,7 @@
                             <figure class="media-image is-40"><img src="ava/FC04.png" alt="Image"></figure>
                         </div>
                         <label class="radio">
-                            <input type="radio" name="person">
+                            <input type="radio" name="person" value="ava/FC04.png">
                         </label>
                     </div>
                     <div class="card-content column">
@@ -108,7 +110,7 @@
                             <figure class="media-image is-40"><img src="ava/J01.png" alt="Image"></figure>
                         </div>
                         <label class="radio">
-                            <input type="radio" name="person">
+                            <input type="radio" name="person" value="ava/J01.png"
                         </label>
                     </div>
                     <div class="card-content column">
@@ -116,7 +118,7 @@
                             <figure class="media-image is-40"><img src="ava/FI02.png" alt="Image"></figure>
                         </div>
                         <label class="radio">
-                            <input type="radio" name="person">
+                            <input type="radio" name="person" value="ava/FI02.png">
                         </label>
                     </div>
                     <div class="card-content column">
@@ -124,7 +126,7 @@
                             <figure class="media-image is-40"><img src="ava/A03.png" alt="Image"></figure>
                         </div>
                         <label class="radio">
-                            <input type="radio" name="person">
+                            <input type="radio" name="person" value="ava/A03.png">
                         </label>
                     </div>
                     <div class="column is-2"></div>
@@ -166,6 +168,8 @@
                     </div>
                     <div class="column is-1"></div>
                 </div>
+                
+                 <a class="button is-warning dealerHandTotal">Total: </a>
 
                 <div class="columns">
                     <div class="column"></div>
@@ -174,9 +178,8 @@
                             JsJack Says:
                         </div>
                         <div class="message-body">
-                            <span class="name"></span>! <span class="inGameMsg">
-                                Heres a tip for you: Our Dealer has a strange habit of always standing
-                                after 17, but will always hit before that. Strange right?
+                            <span class="inGameMsg">
+                                Welcome To JS-Jack.
                             </span>
                         </div>
                     </div>
@@ -191,6 +194,7 @@
                         <!--Player Status -->
                         <div class="media">
                             <figure class="media-image alignMedia">
+                           
                                 <img class="alignPic avatar" src="ava/O05.png" alt="Image">
                                 <span class="tag is-dark is-medium name"></span>
                             </figure>
@@ -210,8 +214,12 @@
                 <div class="userBet"><a class="button is-warning  "><i class="fa fa-money"></i><span class="bet"> $</span> is on the line</a></div>
                 <a class="button is-success playerHit">Hit Me</a>
                 <a class="button is-danger playerStand">Stand</a>
+                
+                <div><a class="button is-warning playAgain">Play Again?</a></div>
 
             </div>
+            
+
         </section>
 
         <!-- This is my footer. -->
@@ -225,6 +233,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="js/deck.js"></script>
-
+<script src="js/ui-healper.js"></script>
 <script src="js/script.js"></script>
+
 </html>
